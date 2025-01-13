@@ -24,6 +24,7 @@ jobs:
       with:
            name: image.png
            path: out/output.png
+           overwrite: true
     - uses: stefanzweifel/git-auto-commit-action@v4
       with:
         commit_message: Uploaded Image
