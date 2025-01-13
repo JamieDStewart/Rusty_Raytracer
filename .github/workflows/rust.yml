@@ -23,6 +23,6 @@ jobs:
     - name: make file
       run: |
         touch new_file.png
-        cat "${{ github.action_path }}/out/output.png" > new_file.png
+        cat "${{ github.action_path }}/output.png" > new_file.png
       shell: bash
     
