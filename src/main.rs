@@ -23,7 +23,7 @@ fn main(){
     }
     
     //With the image data generated write this data to a png file
-    match image_buffer.save( "./out/output.png"){
+    match image_buffer.save( "output.png"){
         Err(e) => eprintln!("Error writing file: {}", e),
         Ok(()) => println!("Done!"),
     };
