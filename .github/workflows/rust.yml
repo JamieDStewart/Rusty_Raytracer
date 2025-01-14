@@ -5,7 +5,9 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-
+permissions:
+    contents: write
+    
 env:
   CARGO_TERM_COLOR: always
 
@@ -20,10 +22,17 @@ jobs:
       run: cargo build --verbose
     - name: Run 
       run: cargo run
-    - name: make file
+    - name: copy output file from run
       run: |
-        touch new_file.png
-        cat "${{ github.action_path }}output.png" > new_file.png
+        touch action_output/action_output_image.png
+        cat "${{ github.action_path }}output.png" > action_output/action_output_image.png
+      shell: bash
+    - name: remove output file from run
+      run: |
+        if [ -f ${{ github.action_path }}output.png ]; then
+           rm ${{ github.action_path }}output.png
+           echo "Output file removed."
+        fi        
       shell: bash
     - uses: EndBug/add-and-commit@v9
       with:
