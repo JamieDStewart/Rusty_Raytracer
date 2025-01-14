@@ -1,10 +1,16 @@
 
 use image::{RgbImage, ImageBuffer, Rgb};
+use maths::Vec2;
 
 const IMAGE_WIDTH : u32 = 256;
 const IMAGE_HEIGHT : u32 = 256;
 
 fn main(){
+    
+    let a = Vec2::new( 1.0, 2.0);
+    let b = Vec2::ZERO;
+    println!( "a: {},{}", a.x, a.y);
+    println!( "b: {},{}", b.x, b.y);
     
     //Generate the image data as a u8 vector
     let mut image_buffer: RgbImage = ImageBuffer::new(IMAGE_WIDTH, IMAGE_HEIGHT);
