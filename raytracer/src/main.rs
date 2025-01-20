@@ -8,9 +8,14 @@ const IMAGE_HEIGHT : u32 = 256;
 fn main(){
     
     let a = Vec2::new( 1.0, 2.0);
-    let b = Vec2::ZERO;
+    let b = Vec2::new( 2.0, 1.2);
+    let c: Vec2 = a + b;
+    let d: Vec2 = a - b;
     println!( "a: {},{}", a.x, a.y);
     println!( "b: {},{}", b.x, b.y);
+    println!( "c: {},{}", c.x, c.y);
+    println!( "d: {},{}", d.x, d.y);
+
     
     //Generate the image data as a u8 vector
     let mut image_buffer: RgbImage = ImageBuffer::new(IMAGE_WIDTH, IMAGE_HEIGHT);
